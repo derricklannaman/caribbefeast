@@ -3,6 +3,23 @@ Caribbefeast::Application.routes.draw do
 
   root :to => 'pages#index'
 
+
+  #loops thru the static info pages
+  %W(index how-it-works about).each do |page|
+    get page, controller: 'pages', action: page
+  end
+
+
+
+
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
