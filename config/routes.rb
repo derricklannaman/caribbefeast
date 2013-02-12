@@ -1,7 +1,7 @@
 Caribbefeast::Application.routes.draw do
 
 
-  root :to => 'info#index'
+  root :to => 'pages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
