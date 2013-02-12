@@ -5,9 +5,13 @@ Caribbefeast::Application.routes.draw do
 
 
   #loops thru the static info pages
-  %W(index how-it-works about).each do |page|
+  %W(how_it_works about).each do |page|
     get page, controller: 'pages', action: page
   end
+
+
+
+  # resources :customers
 
 
 
