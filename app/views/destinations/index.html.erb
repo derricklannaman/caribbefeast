@@ -1,0 +1,15 @@
+<h1>Destination list</h1>
+
+<% @destinations.each do |destination| %>
+  <div>
+    <div>
+      Port of Call:
+      <%= destination.name.capitalize %>
+    </div>
+    <div>
+      Description:
+      <%= destination.description %>
+    </div>
+  </div>
+  <br />
+<% end %>

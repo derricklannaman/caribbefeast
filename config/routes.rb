@@ -11,7 +11,7 @@ Caribbefeast::Application.routes.draw do
 
 
 
-  # resources :customers
+  resources :customers, :destinations
 
 
 
