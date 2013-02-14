@@ -3,15 +3,15 @@ Caribbefeast::Application.routes.draw do
 
   root :to => 'pages#index'
 
-
   #loops thru the static info pages
   %W(how_it_works about).each do |page|
     get page, controller: 'pages', action: page
   end
 
+  resources :customers
+  resources :destinations
+  resources :meals
 
-
-  resources :customers, :destinations
 
 
 

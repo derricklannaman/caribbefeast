@@ -1,15 +1,28 @@
-<h1>Destination list</h1>
+<h1>Destinations</h1>
+
+<div>
+  <%= link_to "Add New Destination", new_destination_path %>
+</div><br/>
 
 <% @destinations.each do |destination| %>
   <div>
     <div>
-      Port of Call:
+        Port of Call:
       <%= destination.name.capitalize %>
     </div>
     <div>
-      Description:
+        Description:
       <%= destination.description %>
     </div>
+    <div>
+      <%= link_to "Show", destination_path(destination) %>
+      <%= link_to "Edit", edit_destination_path(destination) %>
+      <%= link_to "Delete", destination_path(destination), method: :delete,
+      data: { confirm: "Are you sure?"} %>
+    </div>
+
   </div>
   <br />
 <% end %>
+
+

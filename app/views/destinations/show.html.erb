@@ -1,5 +1,8 @@
-<h1>Show Destination</h1>
+  <h1><%= "Welcome to #{@destination.name.capitalize}" %></h1>
 
+<div>
+  <%= link_to "back", destinations_path %>
+</div><br />
 <div>
     <div>
       <p>Port of Call:</p>
@@ -10,3 +13,4 @@
       <%= @destination.description %>
     </div>
 </div>
+

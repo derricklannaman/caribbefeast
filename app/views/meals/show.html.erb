@@ -1,0 +1,19 @@
+<h1><%= "#{@meal.name.capitalize}" %></h1>
+
+<div>
+  <%= link_to "back", meals_path %>
+</div><br />
+<div>
+    <div>
+      <p>Dish:</p>
+      <%= @meal.name %>
+    </div>
+    <div>
+      <p>Description:</p>
+      <%= @meal.description %>
+    </div>
+    <div>
+      <p>Price:
+      <%= number_to_currency(@meal.price) %></p>
+    </div>
+</div>

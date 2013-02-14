@@ -29,7 +29,7 @@ class DestinationsController <ApplicationController
 
   def update
     @destination = Destination.find(params[:id])
-    @destination.update_attributes(params[:id])
+    @destination.update_attributes(params[:destination])
       redirect_to destinations_path
   end
 

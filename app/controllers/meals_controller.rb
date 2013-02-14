@@ -1,6 +1,8 @@
 class MealsController <ApplicationController
 
   def index
+    # @destination = Destination.all
+    # @meals = @destination.meals
     @meals = Meal.all
   end
 
@@ -9,9 +11,10 @@ class MealsController <ApplicationController
   end
 
   def create
-    @meal = Meal.find(params[:id])
+    @meal = Meal.new(params[:meal])
     if @meal.save
-      redirect_to meal_path @meal, notice: "New meal created"
+      flash[:notice] = "New meal created"
+      redirect_to meal_path @meal
     else
       flash.now[:notice] = "Meal not added"
       render 'new'
@@ -28,7 +31,7 @@ class MealsController <ApplicationController
 
   def update
     @meal = Meal.find(params[:id])
-    @meal.update_attributes(params[:id])
+    @meal.update_attributes(params[:meal])
       redirect_to meals_path
   end
 

@@ -1,6 +1,21 @@
 <!-- NEW / EDIT Partial -->
+
 <div>
   <%= form_for @destination do |f| %>
+
+    <% if @destination.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@destination.errors.count, "error") %>
+          prevented the destination from being saved:</h2>
+        <ul>
+          <%= @destination.errors.full_message.each do |msg|%>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class='field'>
       <%= f.label :name, 'Port of Call' %>
       <%= f.text_field :name %>
