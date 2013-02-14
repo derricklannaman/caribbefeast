@@ -1,7 +1,7 @@
 <!-- NEW / EDIT Partial for meals -->
 
 <div>
-  <%= form_for @meal do |f| %>
+  <%= form_for([@destination, @meal]) do |f| %>
 
     <% if @meal.errors.any? %>
       <div id="error_explanation">
@@ -32,5 +32,7 @@
     </div>
 
     <%= f.submit %>
+
   <% end %>
+
 </div>

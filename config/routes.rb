@@ -9,8 +9,10 @@ Caribbefeast::Application.routes.draw do
   end
 
   resources :customers
-  resources :destinations
-  resources :meals
+  resources :destinations do
+     resources :meals
+  end
+
 
 
 

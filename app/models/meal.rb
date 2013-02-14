@@ -12,7 +12,7 @@
 #  order_id       :integer
 #
 
-class Meal <ActiveRecord::Base
+class Meal < ActiveRecord::Base
 
   has_many :customers, :through => :orders
   belongs_to :order

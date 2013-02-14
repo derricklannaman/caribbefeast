@@ -9,7 +9,7 @@
 #  updated_at  :datetime         not null
 #
 
-class Destination <ActiveRecord::Base
+class Destination < ActiveRecord::Base
 
   has_many :meals
 end

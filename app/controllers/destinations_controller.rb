@@ -1,4 +1,4 @@
-class DestinationsController <ApplicationController
+class DestinationsController < ApplicationController
 
   def index
     @destinations = Destination.all
@@ -21,6 +21,9 @@ class DestinationsController <ApplicationController
 
   def show
     @destination = Destination.find(params[:id])
+    @meals = @destination.meals
+
+    # binding.pry
   end
 
   def edit

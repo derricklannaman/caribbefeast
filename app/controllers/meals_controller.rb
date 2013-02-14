@@ -1,20 +1,21 @@
-class MealsController <ApplicationController
+class MealsController < ApplicationController
 
   def index
-    # @destination = Destination.all
-    # @meals = @destination.meals
-    @meals = Meal.all
+    @destination = Destination.find(params[:destination_id])
+    @meals = @destination.meals
   end
 
   def new
-    @meal = Meal.new
+    @destination = Destination.find(params[:destination_id])
+    @meal = @destination.meals.new
   end
 
   def create
-    @meal = Meal.new(params[:meal])
+    @destination = Destination.find(params[:destination_id])
+    @meal = @destination.meals.new(params[:meal])
     if @meal.save
       flash[:notice] = "New meal created"
-      redirect_to meal_path @meal
+      redirect_to destination_meal_path(@destination, @meal)
     else
       flash.now[:notice] = "Meal not added"
       render 'new'
@@ -22,6 +23,7 @@ class MealsController <ApplicationController
   end
 
   def show
+    @destination = Destination.find(params[:destination_id])
     @meal = Meal.find(params[:id])
   end
 

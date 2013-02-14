@@ -1,19 +1,9 @@
-  <h1><%= "Welcome to #{@destination.name.capitalize}" %></h1>
+<h1>All meals</h1>
 
 <div>
-  <%= link_to "back", destinations_path %>
-</div><br />
-
-<div>
-    <div>
-      <p>Port of Call:
-      <%= @destination.name.capitalize %></p>
-    </div>
-    <div>
-      <p>Description:
-      <%= @destination.description %></p>
-    </div>
+  <%= link_to "Add new meal", new_meal_path %>
 </div>
+<br/>
 
 <div>
   <% @meals.each do |meal| %>
@@ -38,9 +28,3 @@
   <% end %>
 
 </div>
-
-<div>
-  <%= link_to "add meal", new_destination_meal_path(@destination) %>
-</div>
-
-
