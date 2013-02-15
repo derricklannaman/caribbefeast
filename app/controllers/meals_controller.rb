@@ -24,23 +24,26 @@ class MealsController < ApplicationController
 
   def show
     @destination = Destination.find(params[:destination_id])
-    @meal = Meal.find(params[:id])
+    @meal = @destination.meals.find(params[:id])
   end
 
   def edit
+    @destination = Destination.find(params[:destination_id])
     @meal = Meal.find(params[:id])
   end
 
   def update
-    @meal = Meal.find(params[:id])
+    @destination = Destination.find(params[:destination_id])
+    @meal = @destination.meals.find(params[:id])
     @meal.update_attributes(params[:meal])
-      redirect_to meals_path
+      redirect_to destination_meal_path(@destination, @meal)
   end
 
   def destroy
-    @meal = Meal.find(params[:id])
+    @destination = Destination.find(params[:destination_id])
+    @meal = @destination.meals.find(params[:id])
     @meal.destroy
-    redirect_to meals_path
+      redirect_to destination_path(@destination)
   end
 
 end

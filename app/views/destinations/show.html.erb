@@ -27,12 +27,12 @@
     </div>
     <div>
       Price:
-      <%= meal.price %>
+      <%= number_to_currency(meal.price, :precision => 2) %>
     </div>
     <div>
-      <%= link_to "Show", meal_path(meal) %>
-      <%= link_to "Edit", edit_meal_path(meal) %>
-      <%= link_to "Delete", meal_path(meal), method: :delete, :data => { confirm: "Are you sure? "} %>
+      <%= link_to "Show", destination_meal_path(@destination, meal) %>
+      <%= link_to "Edit", edit_destination_meal_path(@destination, meal) %>
+      <%= link_to "Delete", destination_meal_path(@destination, meal), method: :delete, :data => { confirm: "Are you sure? "} %>
     </div><br/>
 
   <% end %>
