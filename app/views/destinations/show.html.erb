@@ -1,4 +1,4 @@
-  <h1><%= "Welcome to #{@destination.name.capitalize}" %></h1>
+<h1><%= "Welcome to #{@destination.name.capitalize}" %></h1>
 
 <div>
   <%= link_to "back", destinations_path %>
@@ -6,8 +6,11 @@
 
 <div>
     <div>
-      <p>Port of Call:
-      <%= @destination.name.capitalize %></p>
+      <%= image_tag(@destination.image_url) %>
+    </div>
+    <div>
+      <h3>Port of Call:
+      <%= @destination.name.capitalize %></h3>
     </div>
     <div>
       <p>Description:
@@ -16,7 +19,12 @@
 </div>
 
 <div>
+  <%= link_to "add meal", new_destination_meal_path(@destination) %>
+</div>
+
+<div>
   <% @meals.each do |meal| %>
+   <div class='dish'>
     <div>
       Name:
       <%= meal.name %>
@@ -34,13 +42,10 @@
       <%= link_to "Edit", edit_destination_meal_path(@destination, meal) %>
       <%= link_to "Delete", destination_meal_path(@destination, meal), method: :delete, :data => { confirm: "Are you sure? "} %>
     </div><br/>
-
+  </div><!-- end dish -->
   <% end %>
 
 </div>
 
-<div>
-  <%= link_to "add meal", new_destination_meal_path(@destination) %>
-</div>
 
 

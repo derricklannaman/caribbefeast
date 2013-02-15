@@ -9,10 +9,10 @@
 Destination.delete_all
 Meal.delete_all
 
-d1 =  Destination.create(name: "Jamaica", description: "Beautiful tropical island")
-d2 =  Destination.create(name: "Barbados", description: "Sunny tropical island")
-d3 =  Destination.create(name: "Cuba", description: "Beautiful island, cuisine delights")
-d4 =  Destination.create(name: "Dominican Republic", description: "Beautiful tropical island")
+d1 =  Destination.create(name: "Jamaica", description: "Beautiful tropical island", image_url: 'jamaican_beach.jpg')
+d2 =  Destination.create(name: "Barbados", description: "Sunny tropical island", image_url: 'jamaican_beach.jpg')
+d3 =  Destination.create(name: "Cuba", description: "Beautiful island, cuisine delights", image_url: 'jamaican_beach.jpg')
+d4 =  Destination.create(name: "Dominican Republic", description: "Beautiful tropical island", image_url: 'jamaican_beach.jpg')
 
 m1 = Meal.create(name: "Jerk Chicken", description: "chicken in jerk seasoning", price: "15.00")
 m2 = Meal.create(name: "Curry Chicken", description: "chicken in curray seasoning", price: "14.00")
