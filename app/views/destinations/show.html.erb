@@ -6,7 +6,7 @@
 
 <div>
     <div>
-      <%= image_tag(@destination.image_url) %>
+      <%= image_tag(@destination.image_url, class: 'image_shadow') %>
     </div>
     <div>
       <h3>Port of Call:
@@ -26,12 +26,16 @@
   <% @meals.each do |meal| %>
    <div class='dish'>
     <div>
+      <%= image_tag(meal.image) %>
+    </div>
+
+    <div>
       Name:
       <%= meal.name %>
     </div>
     <div>
       Description:
-      <%= meal.description %>
+      <%= truncate(strip_tags(meal.description), length: 60) %>
     </div>
     <div>
       Price:
@@ -40,7 +44,7 @@
     <div>
       <%= link_to "Show", destination_meal_path(@destination, meal) %>
       <%= link_to "Edit", edit_destination_meal_path(@destination, meal) %>
-      <%= link_to "Delete", destination_meal_path(@destination, meal), method: :delete, :data => { confirm: "Are you sure? "} %>
+      <%= link_to "Delete", destination_meal_path(@destination, meal), method: :delete, data: { confirm: "Are you sure? "} %>
     </div><br/>
   </div><!-- end dish -->
   <% end %>

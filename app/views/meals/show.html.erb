@@ -6,12 +6,15 @@
 
 <div>
     <div>
-      <p>Dish:</p>
-      <%= @meal.name %>
+      <%= image_tag(@meal.image) %>
     </div>
     <div>
-      <p>Description:</p>
-      <%= @meal.description %>
+      <p>Dish:
+      <%= @meal.name %></p>
+    </div>
+    <div>
+      <p>Description:
+      <%= @meal.description %></p>
     </div>
     <div>
       <p>Price:
