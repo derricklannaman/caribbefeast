@@ -10,7 +10,12 @@
 
 <div>
   <%= render 'shared/navigation' %>
+  <%= @page_title || "Caribbefeast" %>
 </div>
+
+<% if notice %>
+  <p id='notice'><%= notice %></p>
+<% end %>
 
 <div class="container">
   <%= yield %>

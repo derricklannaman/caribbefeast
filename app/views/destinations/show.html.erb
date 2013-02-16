@@ -1,3 +1,4 @@
+<!-- This view shows the 'Port of call' and the cuisine particular to that location -->
 <h1><%= "Welcome to #{@destination.name.capitalize}" %></h1>
 
 <div>
@@ -22,6 +23,7 @@
   <%= link_to "add meal", new_destination_meal_path(@destination) %>
 </div>
 
+<!-- A list of all meals from a particular destination -->
 <div>
   <% @meals.each do |meal| %>
    <div class='dish'>
@@ -39,7 +41,7 @@
     </div>
     <div>
       Price:
-      <%= number_to_currency(meal.price, :precision => 2) %>
+      <span class='price'><%= number_to_currency(meal.price, :precision => 2) %></span>
     </div>
     <div>
       <%= link_to "Show", destination_meal_path(@destination, meal) %>

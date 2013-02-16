@@ -1,29 +1,38 @@
-<h1>All meals</h1>
+<!-- Admin view  -->
+
+<h1>All meals for <%= @destination.name %></h1>
 
 <div>
-  <%= link_to "Add new meal", new_meal_path %>
+  <%= link_to "Add new meal", new_destination_meal_path(@destination) %>
 </div>
 <br/>
 
+<!-- A list of all meals from a particular destination -->
 <div>
   <% @meals.each do |meal| %>
+   <div class='dish'>
+    <div>
+      <%= image_tag(meal.image) %>
+    </div>
+
     <div>
       Name:
       <%= meal.name %>
     </div>
     <div>
       Description:
-      <%= meal.description %>
+      <%= truncate(strip_tags(meal.description), length: 60) %>
     </div>
     <div>
       Price:
-      <%= number_to_currency(meal.price, :precision => 2) %>
+      <span class='price'><%= number_to_currency(meal.price, :precision => 2) %></span>
     </div>
     <div>
-      <%= link_to "Show", meal_path(meal) %>
-      <%= link_to "Edit", edit_meal_path(meal) %>
-      <%= link_to "Delete", meal_path(meal), method: :delete, data: { confirm: "Are you sure? "} %>
+      <%= link_to "Show", destination_meal_path(@destination, meal) %>
+      <%= link_to "Edit", edit_destination_meal_path(@destination, meal) %>
+      <%= link_to "Delete", destination_meal_path(@destination, meal), method: :delete, data: { confirm: "Are you sure? "} %>
     </div><br/>
+  </div><!-- end dish -->
 
   <% end %>
 
