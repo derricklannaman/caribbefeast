@@ -9,7 +9,7 @@
           <%= pluralize(@destination.errors.count, "error") %>
           prevented the destination from being saved:</h2>
         <ul>
-          <%= @destination.errors.full_message.each do |msg|%>
+          <% @destination.errors.full_messages.each do |msg|%>
             <li><%= msg %></li>
           <% end %>
         </ul>

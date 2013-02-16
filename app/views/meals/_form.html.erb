@@ -9,7 +9,7 @@
           <%= pluralize(@meal.errors.count, "error") %>
           prevented the meal from being saved:</h2>
         <ul>
-          <%= @meal.errors.full_message.each do |msg|%>
+          <%= @meal.errors.full_messages.each do |msg|%>
             <li><%= msg %></li>
           <% end %>
         </ul>
